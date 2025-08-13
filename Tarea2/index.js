@@ -11,10 +11,10 @@ function imprirOpciones(){
     console.log("2) Salir")
 }
 
-const leerCampo = (texto) =>{
+const leerCampo = (texto) => {
     return new Promise((resolve) => {
-        readLine.question(`${texto}`, (carnet) => {
-            resolve(carnet);
+        readLine.question(`${texto}`, (inventario) => {
+            resolve(inventario);
         });
     });
 }
@@ -34,8 +34,10 @@ const ejecutarOpcion = async (opcion) => {
                 const contendio = fs.readFileSync(`./Entradas/${archivo}`, `utf-8`);
                 console.log("contendio del archivo: ");
                 console.log(contendio);
+                main();
             } catch (error) {
                 console.log("Error al leer el archivo");
+                main();
             }
             break;
         
